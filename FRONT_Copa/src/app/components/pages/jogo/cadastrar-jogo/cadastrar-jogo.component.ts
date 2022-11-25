@@ -11,8 +11,10 @@ import { Selecao } from "src/app/models/selecao.model";
   styleUrls: ["./cadastrar-jogo.component.css"],
 })
 export class CadastrarJogoComponent implements OnInit {
+  selecoes!: Selecao[];
   selecaoA!: Selecao;
   selecaoB!: Selecao;
+  Id!: number;
 
   constructor(
     private http: HttpClient,
@@ -22,14 +24,20 @@ export class CadastrarJogoComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  cadastrar(): void {
-    let jogo: Jogo = {
-      selecaoA: this.selecaoA,
-      selecaoB: this.selecaoB,
-    };
+    cadastrar(): void {
+    let selecao: Selecao = {
+      id: this.Id,
+      nome: "",
+    }
+
+  // cadastrar(): void {
+  //   let jogo: Jogo = {
+  //     selecaoA: this.selecaoA,
+  //     selecaoB: this.selecaoB,
+  //   };
 
     this.http
-      .post<Jogo>("https://localhost:5001/api/jogo/cadastrar", jogo)
+      .post<Selecao>("https://localhost:5001/api/jogo/cadastrar", selecao)
       .subscribe({
         next: (funcionario) => {
           this._snackBar.open("Jogo cadastrada!", "Ok!", {

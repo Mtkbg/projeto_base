@@ -5,4 +5,6 @@ export interface Jogo {
   selecaoA?: Selecao;
   selecaoB?: Selecao;
   criadoEm?: string;
+  placar?: number;
+  placar2?: number;
 }

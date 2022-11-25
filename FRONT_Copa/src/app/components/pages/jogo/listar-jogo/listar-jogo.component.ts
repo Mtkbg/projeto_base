@@ -1,6 +1,7 @@
 import { HttpClient } from "@angular/common/http";
 import { Component, OnInit } from "@angular/core";
 import { Jogo } from "src/app/models/jogo.model";
+import { Selecao } from "src/app/models/selecao.model";
 
 @Component({
   selector: "app-listar-jogo",
@@ -9,7 +10,7 @@ import { Jogo } from "src/app/models/jogo.model";
 })
 export class ListarJogoComponent implements OnInit {
 
-  jogo!: Jogo[];
+  jogos!: Jogo[];
 
   constructor(private http: HttpClient) {}
 
@@ -24,14 +25,8 @@ export class ListarJogoComponent implements OnInit {
         next: (jogos) => {
           //Executamos o que for necessário quando a requisição
           //for bem-sucedida
-          this.jogo = jogos;
+          this.jogos = jogos;
         }
       });
   }
-
-  // palpitar(): void{
-  //   let jogo: Jogo = {
-  //     palpitar: this.palpitar,
-  //   }
-  // }
 }

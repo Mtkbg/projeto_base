@@ -8,18 +8,21 @@
       <tr>
         <th>#</th>
         <th>Seleção A</th>
+        <th></th>
+        <th>X</th>
+        <th></th>
         <th>Seleção B</th>
       </tr>
-      <tr *ngFor="let jogo of jogo">
+      <tr *ngFor="let jogo of jogos">
         <td>{{ jogo.id }}</td>
-        <td>{{ jogo.selecaoA }}</td>
-        <td>{{ jogo.selecaoB }}</td>
+        <td>{{ jogo.selecaoA?.nome }}</td>
+        <td>{{ jogo.placar }}</td>
+        <td>X</td>
+        <td>{{ jogo.placar2 }}</td>
+        <td>{{ jogo.selecaoB?.nome }}</td>
         <td>{{ jogo.criadoEm }}</td>
+        <button>Palpitar</button>
       </tr>
     </table>
-
-    <!-- <button mat-raised-button color="warn" id="btnpalpitar" (click)="palpitar)">
-      Cadastrar
-    </button> -->
   </mat-card-content>
 </mat-card>
