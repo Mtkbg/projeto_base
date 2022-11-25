@@ -1,0 +1,25 @@
+<mat-card class="container">
+  <mat-card-header>
+    <mat-card-title> Listar Jogos </mat-card-title>
+  </mat-card-header>
+
+  <mat-card-content>
+    <table>
+      <tr>
+        <th>#</th>
+        <th>Seleção A</th>
+        <th>Seleção B</th>
+      </tr>
+      <tr *ngFor="let jogo of jogo">
+        <td>{{ jogo.id }}</td>
+        <td>{{ jogo.selecaoA }}</td>
+        <td>{{ jogo.selecaoB }}</td>
+        <td>{{ jogo.criadoEm }}</td>
+      </tr>
+    </table>
+
+    <!-- <button mat-raised-button color="warn" id="btnpalpitar" (click)="palpitar)">
+      Cadastrar
+    </button> -->
+  </mat-card-content>
+</mat-card>

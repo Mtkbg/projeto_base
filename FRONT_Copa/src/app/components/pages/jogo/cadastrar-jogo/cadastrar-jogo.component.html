@@ -1,0 +1,30 @@
+<mat-card class="container">
+  <mat-card-header>
+    <mat-card-title> Cadastrar Jogo </mat-card-title>
+  </mat-card-header>
+
+  <mat-card-content>
+    <!-- <mat-form-field class="input" id="jogo">
+      <h3>Seleção A:</h3>
+      <select name="selecaoA" id="selecaoA">
+        <option *ngFor="let jogo" value="{{ selecaoA.id }}">
+          {{ selecaoA.nome }}
+        </option></select
+      ><br />
+
+      <h3>Seleção B:</h3>
+      <select name="selecaoB" id="selecaoB">
+        <option value="selecaoB">aa</option>
+      </select>
+    </mat-form-field> -->
+
+    <button
+      mat-raised-button
+      color="warn"
+      id="btnCadastrar"
+      (click)="cadastrar()"
+    >
+      Cadastrar
+    </button>
+  </mat-card-content>
+</mat-card>
